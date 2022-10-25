@@ -1,0 +1,66 @@
+.text-primary{
+    color: var(--clr-neutral-900);
+}
+
+.text-secondary{
+    color: var(--clr-neutral-500);
+}
+
+
+.fw-bold{
+    font-weight: var(--fw-bold);
+}
+
+.fw-demi{
+    font-weight: var(--fw-demi);
+}
+
+.fw-regular{
+    font-weight: var(--fw-regular);
+}
+
+.fs-header-1{
+    font-size: var(--fs-header-1);
+    line-height: 1.2;
+}
+
+.fs-header-2{
+    font-size: var(--fs-header-2);
+    line-height: 1.2;
+}
+
+.fs-header-3{
+    font-size: var(--fs-header-3);
+    line-height: 1.2;
+}
+
+.fs-header-4{
+    font-size: var(--fs-header-4);
+    line-height: 1.2;
+}
+
+.fs-header-5{
+    font-size: var(--fs-header-5);
+    line-height: 1.2;
+}
+
+.fs-paragraph{
+    font-size: var(--fs-paragraph);
+    line-height: 1.8;
+}
+
+.fs-small-paragraph{
+    font-size: var(--fs-small-paragraph);
+    line-height: 1.8;
+}
+
+.section{
+    --max-width:160rem;
+    --padding:2rem;
+    width: min(var(--max-width),100% - (var(--padding)*2));
+    margin-inline: auto;
+}
+
+.flow>*+*{
+    margin-top: var(--flow-spacer, 20rem);
+}

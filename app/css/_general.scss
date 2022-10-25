@@ -1,0 +1,142 @@
+body {
+    font-family: var(--ff-primary);
+    color: var(--clr-neutral-900);
+}
+
+header {
+    margin-bottom: 6rem;
+}
+
+.credits {
+    padding: 0.75rem 0;
+}
+
+.header-image{
+    width: 100%;
+}
+
+.introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6rem;
+
+    &__textarea {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-top: 2.5rem;
+
+        &>* {
+            flex: 1;
+        }
+
+        &--bodytext {
+            max-width: 700px;
+            padding-top: 1.5em;
+        }
+    }
+}
+
+.counter {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid var(--clr-neutral-300);
+    padding-top: 0.75rem;
+}
+
+.software,
+.selections,
+.experience,
+.footer {
+    margin-bottom: 200px;
+}
+
+.software__content--grid {
+    --grid-layout-gap: 2.5rem;
+    --grid-column-count: 4;
+    --grid-item--min-width: 320px;
+
+    --gap-count: calc(var(--grid-column-count) - 1);
+    --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+    --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+    grid-gap: var(--grid-layout-gap);
+
+    .grid__element {
+        .element__title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.confident {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6rem;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        &--element {
+            max-width: 36.75rem;
+
+            .element__description {
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+
+.company{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    &__details{
+        display: flex;
+        gap: 1.5rem;
+        max-width: 490px;
+    }
+    &__position{
+        display: flex;
+        justify-content: space-between;
+
+        .position__description{
+            max-width: 700px;
+        }
+        .position__information{
+            min-width: 390px;
+
+            &--name::before{
+                content: '';
+                display: flex;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background-color: var(--clr-neutral-900);
+            }
+            &--name{
+                display: flex;
+                align-items: center;
+                &>p{
+                    margin-left: 1.5rem;
+                }
+            }
+            &--date{
+                margin-left: 38px;
+            }
+        }
+    }
+    .multiple_positions{
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+}
