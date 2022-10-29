@@ -46,6 +46,11 @@
 .fs-paragraph{
     font-size: var(--fs-paragraph);
     line-height: 1.8;
+    @media (max-width: 45rem) {
+        & {
+            font-size: var(--fs-small-paragraph);
+        }
+    }
 }
 
 .fs-small-paragraph{
@@ -58,8 +63,29 @@
     --padding:2rem;
     width: min(var(--max-width),100% - (var(--padding)*2));
     margin-inline: auto;
+    @media (max-width: 45rem){
+        &{
+            --padding:1rem;        }
+    }
 }
 
 .flow>*+*{
     margin-top: var(--flow-spacer, 20rem);
+    @media (max-width: 45rem){
+        &{
+            margin-top: var(--flow-spacer, 8rem);
+        }
+    }
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-d-c{
+    flex-direction: column;
+}
+
+span.red{
+    color: var(--clr-error);
 }
