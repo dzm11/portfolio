@@ -70,10 +70,10 @@
 }
 
 .flow>*+*{
-    margin-top: var(--flow-spacer, 20rem);
+    margin-block-start: var(--flow-spacer, 20rem);
     @media (max-width: 45rem){
         &{
-            margin-top: var(--flow-spacer, 8rem);
+            margin-block-start: var(--flow-spacer, 8rem);
         }
     }
 }
@@ -88,4 +88,8 @@
 
 span.red{
     color: var(--clr-error);
+}
+
+.hidden{
+    opacity: 0;
 }

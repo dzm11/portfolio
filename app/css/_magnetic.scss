@@ -1,0 +1,25 @@
+
+.magnetic{
+    position: relative;
+
+    cursor: pointer;
+    p{
+            position: relative;
+            display: inline-block;
+            padding: 24px;
+            transition: transform 50ms ease-out;
+            line-height: 1;
+            .rotate{
+                display: inline-block;
+                transition: transform 0.5s cubic-bezier(0.7, 0, 0.3, 1);     
+            }
+          
+    }
+    p:hover > .rotate{
+        transform: rotate(360deg);
+
+    }
+
+  }
+
+  
