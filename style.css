@@ -96,7 +96,7 @@ svg {
 }
 
 :root {
-  --ff-primary: termina, Helvetica, sans-serif;
+  --ff-primary: termina, sans-serif;
   --ff-body:var(--ff-primary);
   --ff-heading:var(--ff-primary);
   --fw-regular:400;

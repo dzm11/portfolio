@@ -19,19 +19,33 @@ magnetic.forEach((btn) => {
   });
 });
 
-const Animationobserver = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    // console.log(entry) 
+    console.log(entry) 
     if (entry.isIntersecting){
       entry.target.classList.add('show')
       observer.unobserve(entry.target);
     }
-    // else{
-    //   entry.target.classList.remove('show');}
   })
 },
 {
 })
-
 const hiddenElements = document.querySelectorAll('.animate');
 hiddenElements.forEach((el) => observer.observe(el));
+
+
+//Counter Animation Observer
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry) 
+    if (entry.isIntersecting){
+      entry.target.classList.add('show')
+      counterObserver.unobserve(entry.target);
+    }
+  })
+},
+{
+})
+const counterAnimation = document.querySelectorAll('.animate');
+counterAnimation.forEach((el) => counterObserver.observe(el));
