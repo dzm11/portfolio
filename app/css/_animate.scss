@@ -1,9 +1,12 @@
-@keyframes reveal {
+@keyframes entry {
     0% {
       transform: translateY(100%);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
     }
     100% {
-
       transform: translateY(0);
       opacity: 1;
     }
@@ -13,24 +16,50 @@
     0% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
   }
 
-.animate{
+  @keyframes counterAnimation{
+    0%{
+      width: 0px;
+    }
+    100%{
+      width: 100%;
+    }
+  }
+
+  @keyframes righToLeft {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+//First Entry Animation
+
+.entry{
     display: block;
     overflow: hidden;
     height: max-content;
 }
 
-.show>h2{
-    animation: reveal 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+.entry.show>h2{
+    animation: entry .7s cubic-bezier(0.7, 0, 0.3, 1) forwards;
 }
 
-.show>h4{
+.entry.show>h4{
     opacity: 0;
-    animation: reveal 1s cubic-bezier(0.7, 0, 0.3, 1) .5s forwards;
+    animation: entry .7s cubic-bezier(0.7, 0, 0.3, 1) .5s forwards;
 }
 
 .introduction__image{
@@ -38,15 +67,32 @@
     animation: imageAnimation 1s cubic-bezier(0.7, 0, 0.3, 1) 1s forwards;
 }
 
-.show>h1{
-    animation: reveal 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
-    @media (max-width: 45rem) {
-        & {
-            animation: reveal 1s cubic-bezier(0.7, 0, 0.3, 1) 1.5s forwards;
-        }
-    }
+//Counter Animation
+
+.unrevealed{
+  width: 0px;
+  overflow: hidden;
 }
 
-.show>p{
-    animation: imageAnimation 0.5s cubic-bezier(0.7, 0, 0.3, 1) 0.7s forwards;
+.reveal{
+  animation: counterAnimation 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+.reveal>*{
+  opacity: 0;
+  animation: righToLeft 0.3s cubic-bezier(.16, 0,.06,.79) 1s forwards;
+}
+
+//Title Under Counter
+
+.title-animation{
+  overflow: hidden;
+  width: max-content;
+}
+
+.title-animation>*{
+  opacity: 0;
+}
+.rightToLeft>*{
+  animation: entry 0.3s cubic-bezier(.16, 0,.06,.79) 1s forwards;
 }

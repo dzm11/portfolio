@@ -19,19 +19,21 @@ magnetic.forEach((btn) => {
   });
 });
 
-const observer = new IntersectionObserver((entries) => {
+//First Entry Animation Observer
+
+firstEntry = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log(entry) 
     if (entry.isIntersecting){
       entry.target.classList.add('show')
-      observer.unobserve(entry.target);
+      firstEntry.unobserve(entry.target);
     }
   })
 },
 {
 })
-const hiddenElements = document.querySelectorAll('.animate');
-hiddenElements.forEach((el) => observer.observe(el));
+
+const hiddenElements = document.querySelectorAll('.entry');
+hiddenElements.forEach((el) => firstEntry.observe(el));
 
 
 //Counter Animation Observer
@@ -40,12 +42,32 @@ const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     console.log(entry) 
     if (entry.isIntersecting){
-      entry.target.classList.add('show')
+      entry.target.classList.add('reveal')
       counterObserver.unobserve(entry.target);
     }
   })
 },
 {
+  threshold: 1,
+  rootMargin: "-50px 0",
 })
-const counterAnimation = document.querySelectorAll('.animate');
+const counterAnimation = document.querySelectorAll('.counter');
 counterAnimation.forEach((el) => counterObserver.observe(el));
+
+//Counter Animation Observer
+
+const titleObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry) 
+    if (entry.isIntersecting){
+      entry.target.classList.add('rightToLeft')
+      titleObserver.unobserve(entry.target);
+    }
+  })
+},
+{
+  threshold: 1,
+  rootMargin: "-50px 0",
+})
+const titleAnimation = document.querySelectorAll('.title-animation');
+titleAnimation.forEach((el) => titleObserver.observe(el));
