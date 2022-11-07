@@ -59,7 +59,7 @@
 }
 
 .section{
-    --max-width:160rem;
+    --max-width:120rem;
     --padding:2rem;
     width: min(var(--max-width),100% - (var(--padding)*2));
     margin-inline: auto;
@@ -89,3 +89,17 @@
 span.red{
     color: var(--clr-error);
 }
+
+.padding__new{
+padding-inline: 2rem;
+        @media (max-width: 45rem){
+            &{
+                --padding:1rem;        }
+        }
+}
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
