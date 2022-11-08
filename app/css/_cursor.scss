@@ -1,6 +1,6 @@
 .mouse__cursor {
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     border-radius: 50%;
     border: 0;
     background: red;
@@ -21,8 +21,8 @@
 }
 
 .mouse__cursor--active {
-    height: calc(clamp(3.75em, 5.5vw, 8em) * 2);
-    width: calc(clamp(3.75em, 5.5vw, 8em) * 2);
+    height: calc(clamp(3.75em, 5.5vw, 5em) * 2);
+    width: calc(clamp(3.75em, 5.5vw, 5em) * 2);
     p{
         font-size: 1em;
         transition: font-size .4s cubic-bezier(0.34, 1, 0.64, 1);

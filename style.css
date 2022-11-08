@@ -651,8 +651,8 @@ footer .policy {
 }
 
 .mouse__cursor {
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   border-radius: 50%;
   border: 0;
   background: red;
@@ -673,8 +673,8 @@ footer .policy {
 }
 
 .mouse__cursor--active {
-  height: calc(clamp(3.75em, 5.5vw, 8em) * 2);
-  width: calc(clamp(3.75em, 5.5vw, 8em) * 2);
+  height: calc(clamp(3.75em, 5.5vw, 5em) * 2);
+  width: calc(clamp(3.75em, 5.5vw, 5em) * 2);
 }
 .mouse__cursor--active p {
   font-size: 1em;

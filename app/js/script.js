@@ -1,14 +1,14 @@
 // Device Friendly Product Slider With Progress Bar + circle mouse
 // https://www.youtube.com/watch?v=LPBGK1gqXoU
 
-let el = document.querySelector('.container.locomotive-scroll.data-scroll-container');
-let st = window.getComputedStyle(el);
-let tr = st.getPropertyValue("-webkit-transform") ||
-       st.getPropertyValue("-moz-transform") ||
-       st.getPropertyValue("-ms-transform") ||
-       st.getPropertyValue("-o-transform") ||
-       st.getPropertyValue("transform") || FAIL;
-// var values = tr.split('(')[1];
+// let el = document.querySelector('.container');
+// let st = window.getComputedStyle(el);
+// let tr = st.getPropertyValue("transform") ||
+//        st.getPropertyValue("-moz-transform") ||
+//        st.getPropertyValue("-ms-transform") ||
+//        st.getPropertyValue("-o-transform") ||
+//        st.getPropertyValue("transform") || FAIL;
+// // var values = tr.split('(')[1];
 
 
 
@@ -38,13 +38,24 @@ slider.addEventListener('mouseleave', (e) => {
 
 slider.addEventListener('mouseenter', (e) => {
   mouseCursor.classList.add('mouse__cursor--active');
-  console.log(tr);
 })
 
 slider.addEventListener('mousemove', (e) => {
+  let el = document.querySelector('.container');
+  let st = window.getComputedStyle(el);
+  let tr = st.getPropertyValue("-webkit-transform") ||
+            st.getPropertyValue("-moz-transform") ||
+            st.getPropertyValue("-ms-transform") ||
+            st.getPropertyValue("-o-transform") ||
+            st.getPropertyValue("transform") || FAIL;
+    var values = tr.split('(')[1];
+    values = values.split(')')[0];
+    values = values.split(', ');
+    // console.log(values[5]);
 
-  mouseCursor.style.top = (e.clientY - document.querySelector('.locomotive-scroll').scrollTop) + 'px';
-  mouseCursor.style.left = e.clientX + 'px';
+    mouseCursor.style.top = ((+values[5] * (-1)) + +e.clientY) + 'px';
+    mouseCursor.style.left = e.clientX + 'px';
+
     if(sliderGrabbed){
         slider.parentElement.scrollLeft -= e.movementX;
     }
@@ -53,7 +64,6 @@ slider.addEventListener('mousemove', (e) => {
 slider.addEventListener('wheel', (e) =>{
     // e.preventDefault()
     // slider.parentElement.scrollLeft += e.deltaY;
-    console.log(tr);
 })
 
 function getScrollPercentage(){
@@ -138,7 +148,9 @@ titleAnimation.forEach((el) => titleObserver.observe(el));
 
 
 
-// window.addEventListener("mousemove", cursor);
-// function cursor(e){
-//   console.log(e);
-// }
+window.addEventListener("mousemove", cursor);
+function cursor(e){
+
+  // console.log(values[5]);
+  // console.log(tr);
+}
