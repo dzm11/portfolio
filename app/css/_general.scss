@@ -139,10 +139,10 @@ header {
     }
     
     .grid__element {
-        min-width: 350px;
+        min-width: 400px;
         width: 100%;
         &:not(:first-child){
-            margin-inline-start: 40px;
+            padding-inline-start: 40px;
         }
         .element__title {
             display: flex;

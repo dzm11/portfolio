@@ -334,12 +334,12 @@ header {
   cursor: none;
 }
 .software__content--grid .grid__element {
-  min-width: 350px;
+  min-width: 400px;
   width: 100%;
 }
 .software__content--grid .grid__element:not(:first-child) {
-  -webkit-margin-start: 40px;
-          margin-inline-start: 40px;
+  -webkit-padding-start: 40px;
+          padding-inline-start: 40px;
 }
 .software__content--grid .grid__element .element__title {
   display: flex;
