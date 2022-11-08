@@ -45,6 +45,20 @@
     }
   }
 
+  @keyframes leftToRight {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
 //First Entry Animation
 
 .entry{
@@ -87,7 +101,7 @@
 
 .title-animation{
   overflow: hidden;
-  width: max-content;
+  display: inline-block;
 }
 
 .title-animation>*{
@@ -95,4 +109,25 @@
 }
 .rightToLeft>*{
   animation: entry 0.3s cubic-bezier(.16, 0,.06,.79) 1s forwards;
+}
+
+.grid__element{
+  opacity: 0;
+}
+.software__content--bar{
+width: 0px;}
+.grid-reveal {
+  .grid__element {
+
+    animation: entry .5s cubic-bezier(.16, 0,.06,.79) forwards;
+      
+    @for $i from 1 through 8 {
+      &:nth-child(#{$i}) {
+        animation-delay: .5s + (100ms * $i);
+      }
+    }
+  }
+  .software__content--bar{
+    animation: counterAnimation .7s cubic-bezier(.16, 0,.06,.79) 1s forwards;
+  }
 }

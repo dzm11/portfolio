@@ -122,7 +122,7 @@ const counterObserver = new IntersectionObserver((entries) => {
 },
 {
   threshold: 1,
-  rootMargin: "-50px 0px",
+  // rootMargin: "-50px 0px",
 })
 const counterAnimation = document.querySelectorAll('.counter');
 counterAnimation.forEach((el) => counterObserver.observe(el));
@@ -140,10 +140,27 @@ const titleObserver = new IntersectionObserver((entries) => {
 },
 {
   // threshold: 1,
-  rootMargin: "-50px 0px",
+  // rootMargin: "-50px 0px",
 })
 const titleAnimation = document.querySelectorAll('.title-animation');
 titleAnimation.forEach((el) => titleObserver.observe(el));
+
+//Grid Carousel Animation Observer
+
+const carouselObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting){
+      entry.target.classList.add('grid-reveal')
+      carouselObserver.unobserve(entry.target);
+    }
+  })
+},
+{
+  // threshold: 1,
+  // rootMargin: "-50px 0px",
+})
+const carouselAnimation = document.querySelectorAll('.software__content');
+carouselAnimation.forEach((el) => carouselObserver.observe(el));
 
 
 
