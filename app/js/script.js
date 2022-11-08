@@ -139,7 +139,7 @@ const titleObserver = new IntersectionObserver((entries) => {
   })
 },
 {
-  threshold: 1,
+  // threshold: 1,
   rootMargin: "-50px 0px",
 })
 const titleAnimation = document.querySelectorAll('.title-animation');
