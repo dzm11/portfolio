@@ -9,19 +9,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://use.typekit.net/qhq1dlb.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-        <header>
+    <div class="container locomotive-scroll data-scroll-container">
+        <div class="mouse__cursor">
+            <p>Scroll</p>
+        </div>
+        <header class="data-scroll">
             <div class="credits">
                 <a href="index.html" class="magnetic">
                     <p class="fs-small-paragraph fw-regular"><span class="rotate">©</span> Coded by me</p>
                 </a>
             </div>
         </header>
-        <main class="flow">
+        <main class="flow data-scroll">
             <section class="section">
                 <div class="introduction">
                     <div class="introduction__name entry">
@@ -52,9 +57,7 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Oldschool -->
-            <section class="section">
+            <section class="section prevent-select">
                 <div class="counter unrevealed">
                     <h4 class="fs-header-4">01</h4>
                 </div>
@@ -63,137 +66,6 @@
                 </div>
                 <div class="software__content">
                     <div class="software__content--grid">
-                        <div class="grid__element">
-                            <div class="element__title">
-                                <div class="element__title--icon"><img src="./img/Figma-logo.jpg" alt="" loading="lazy">
-                                </div>
-                                <div class="element__title--name">
-                                    <h5 class="fs-header-5">Figma</h5>
-                                </div>
-                            </div>
-                            <div class="element__description">
-                                <p class="fs-paragraph">Mam zaawansowaną wiedzę na temat autolayoutów, komponentów czy
-                                    nazewnictwa i
-                                    przejrzystości w projekcie</p>
-                            </div>
-                        </div>
-                        <div class="grid__element">
-                            <div class="element__title">
-                                <div class="element__title--icon"><img src="./img/Html-css-logo.jpg" alt=""
-                                        loading="lazy"></div>
-                                <div class="element__title--name">
-                                    <h5 class="fs-header-5">HTML & CSS</h5>
-                                </div>
-                            </div>
-                            <div class="element__description">
-                                <p class="fs-paragraph">Samodzielnie napisałem kilka stron w html oraz stworzyłem kilka
-                                    własnych
-                                    szablonów do wordpressa</p>
-                            </div>
-                        </div>
-                        <div class="grid__element">
-                            <div class="element__title">
-                                <div class="element__title--icon"><img src="./img/Adobe-Photoshop-CC-logo.jpg" alt=""
-                                        loading="lazy">
-                                </div>
-                                <div class="element__title--name">
-                                    <h5 class="fs-header-5">Photoshop</h5>
-                                </div>
-                            </div>
-                            <div class="element__description">
-                                <p class="fs-paragraph">Po wielu latach pracy z tym programem, czuje się bardzo pewnie w
-                                    fotomontażach,
-                                    retuszu i projektowania plakatów i typografii.</p>
-                            </div>
-                        </div>
-                        <div class="grid__element">
-                            <div class="element__title">
-                                <div class="element__title--icon"><img src="./img/Adobe-Illustrator-CC-logo.jpg" alt=""
-                                        loading="lazy">
-                                </div>
-                                <div class="element__title--name">
-                                    <h5 class="fs-header-5">Illustrator</h5>
-                                </div>
-                            </div>
-                            <div class="element__description">
-                                <p class="fs-paragraph">Czuje się bardzo pewnie w projektowaniu logotypów jak i ikon.
-                                    Świetnie radzę
-                                    sobie z obsługą tego programu.</p>
-                            </div>
-                        </div>
-                        <div class="grid__element">
-                            <div class="element__title">
-                                <div class="element__title--icon"><img src="./img/Google-Analitics-logo.jpg" alt=""
-                                        loading="lazy">
-                                </div>
-                                <div class="element__title--name">
-                                    <h5 class="fs-header-5">Google Analitics</h5>
-                                </div>
-                            </div>
-                            <div class="element__description">
-                                <p class="fs-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                                    viverra ante quis quam
-                                    egestas, ut rutrum enim pharetra</p>
-                            </div>
-                        </div>
-                        <div class="grid__element">
-                            <div class="element__title">
-                                <div class="element__title--icon"><img src="./img/google-optimize-logo.jpg" alt=""
-                                        loading="lazy">
-                                </div>
-                                <div class="element__title--name">
-                                    <h5 class="fs-header-5">Figma</h5>
-                                </div>
-                            </div>
-                            <div class="element__description">
-                                <p class="fs-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                                    viverra ante quis quam
-                                    egestas, ut rutrum enim pharetra</p>
-                            </div>
-                        </div>
-                        <div class="grid__element">
-                            <div class="element__title">
-                                <div class="element__title--icon"><img src="./img/google-optimize-logo.jpg" alt=""
-                                        loading="lazy">
-                                </div>
-                                <div class="element__title--name">
-                                    <h5 class="fs-header-5">CUX</h5>
-                                </div>
-                            </div>
-                            <div class="element__description">
-                                <p class="fs-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                                    viverra ante quis quam
-                                    egestas, ut rutrum enim pharetra</p>
-                            </div>
-                        </div>
-                        <div class="grid__element">
-                            <div class="element__title">
-                                <div class="element__title--icon"><img src="./img/google-optimize-logo.jpg" alt=""
-                                        loading="lazy">
-                                </div>
-                                <div class="element__title--name">
-                                    <h5 class="fs-header-5">User</h5>
-                                </div>
-                            </div>
-                            <div class="element__description">
-                                <p class="fs-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                                    viverra ante quis quam
-                                    egestas, ut rutrum enim pharetra</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Newschool -->
-            <section class="section prevent-select">
-                <div class="counter unrevealed">
-                    <h4 class="fs-header-4">01</h4>
-                </div>
-                <div class="software title title-animation">
-                    <h1 class="fs-header-1">Software skills</h1>
-                </div>
-                <div class="software__content_new">
-                    <div class="software__content--grid_new">
                         <div class="software__grid">
                             <div class="grid__element">
                                 <div class="element__title">
@@ -629,7 +501,7 @@
             </section>
         </main>
         <!-- Footer do zmiany - dodać kliknięcie dalej na klaiawturze mobile -->
-        <footer>
+        <footer class="data-scroll">
             <div class="section">
                 <div class="counter unrevealed">
                     <h4 class="fs-header-4">05</h4>
@@ -671,6 +543,15 @@
             </div>
         </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js"></script>
+<script>
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector(".data-scroll-container"),
+  smooth: true,
+}); 
+</script>
     <script defer src="./app/js/script.js"></script>
 </body>
 

@@ -1,39 +1,60 @@
-// Device Friendly Product Slider With Progress Bar
+// Device Friendly Product Slider With Progress Bar + circle mouse
 // https://www.youtube.com/watch?v=LPBGK1gqXoU
 
-const slider = document.querySelector('.software__grid');
+let el = document.querySelector('.container.locomotive-scroll.data-scroll-container');
+let st = window.getComputedStyle(el);
+let tr = st.getPropertyValue("-webkit-transform") ||
+       st.getPropertyValue("-moz-transform") ||
+       st.getPropertyValue("-ms-transform") ||
+       st.getPropertyValue("-o-transform") ||
+       st.getPropertyValue("transform") || FAIL;
+// var values = tr.split('(')[1];
+
+
+
+const slider = document.querySelector('.software__grid'); //cursor too
 const progressBar = document.querySelector('.progress__bar');
+let mouseCursor = document.querySelector('.mouse__cursor')
 
 let sliderGrabbed = false;
 
 slider.parentElement.addEventListener('scroll', (e) => {
-    progressBar.style.width  = `${getScrollPercentage()}%`
+    progressBar.style.width  = `${getScrollPercentage()}%`;
+
 })
 
 slider.addEventListener('mousedown', (e) => {
     sliderGrabbed = true;
-    slider.style.cursor = 'grabbing';
 })
 
 slider.addEventListener('mouseup', (e) => {
     sliderGrabbed = false;
-    slider.style.cursor = 'grab';
 })
 
 slider.addEventListener('mouseleave', (e) => {
     sliderGrabbed = false;
+    mouseCursor.classList.remove('mouse__cursor--active');
+})
+
+slider.addEventListener('mouseenter', (e) => {
+  mouseCursor.classList.add('mouse__cursor--active');
+  console.log(tr);
 })
 
 slider.addEventListener('mousemove', (e) => {
+
+  mouseCursor.style.top = (e.clientY - document.querySelector('.locomotive-scroll').scrollTop) + 'px';
+  mouseCursor.style.left = e.clientX + 'px';
     if(sliderGrabbed){
         slider.parentElement.scrollLeft -= e.movementX;
     }
 })
 
-// slider.addEventListener('wheel', (e) =>{
-//     e.preventDefault()
-//     slider.parentElement.scrollLeft += e.deltaY;
-// })
+slider.addEventListener('wheel', (e) =>{
+    // e.preventDefault()
+    // slider.parentElement.scrollLeft += e.deltaY;
+    console.log(tr);
+})
 
 function getScrollPercentage(){
    return ((slider.parentElement.scrollLeft / (slider.parentElement.scrollWidth - slider.parentElement.clientWidth) ) * 100);
@@ -82,7 +103,7 @@ hiddenElements.forEach((el) => firstEntry.observe(el));
 
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log(entry) 
+    // console.log(entry) 
     if (entry.isIntersecting){
       entry.target.classList.add('reveal')
       counterObserver.unobserve(entry.target);
@@ -100,7 +121,7 @@ counterAnimation.forEach((el) => counterObserver.observe(el));
 
 const titleObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log(entry) 
+    // console.log(entry) 
     if (entry.isIntersecting){
       entry.target.classList.add('rightToLeft')
       titleObserver.unobserve(entry.target);
@@ -113,3 +134,11 @@ const titleObserver = new IntersectionObserver((entries) => {
 })
 const titleAnimation = document.querySelectorAll('.title-animation');
 titleAnimation.forEach((el) => titleObserver.observe(el));
+
+
+
+
+// window.addEventListener("mousemove", cursor);
+// function cursor(e){
+//   console.log(e);
+// }
