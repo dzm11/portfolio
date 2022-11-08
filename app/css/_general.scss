@@ -132,17 +132,35 @@ header {
 
 .software__content--grid {
     overflow: hidden;
-
+    @media (max-width: 45rem) {
+                &{
+                    overflow:scroll;
+                    -ms-overflow-style: none;  /* IE and Edge */
+                    scrollbar-width: none;  /* Firefox */
+                }
+                &::-webkit-scrollbar {
+                    display: none;
+                  }
+            }
     .software__grid{
         display: flex;
         cursor:none;
+        @media (max-width: 45rem) {
+            &{
+scroll-snap-type: x mandatory;            }
+        }
     }
     
     .grid__element {
+        
         min-width: 400px;
         width: 100%;
         &:not(:first-child){
             padding-inline-start: 40px;
+        }
+        @media (max-width: 45rem) {
+            &{
+scroll-snap-align: center;            }
         }
         .element__title {
             display: flex;

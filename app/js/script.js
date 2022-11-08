@@ -61,10 +61,10 @@ slider.addEventListener('mousemove', (e) => {
     }
 })
 
-slider.addEventListener('wheel', (e) =>{
-    e.preventDefault()
-    slider.parentElement.scrollLeft += e.deltaY;
-})
+// slider.addEventListener('wheel', (e) =>{
+//     e.preventDefault()
+//     slider.parentElement.scrollLeft += e.deltaY;
+// })
 
 function getScrollPercentage(){
    return ((slider.parentElement.scrollLeft / (slider.parentElement.scrollWidth - slider.parentElement.clientWidth) ) * 100);

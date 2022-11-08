@@ -329,9 +329,25 @@ header {
 .software__content--grid {
   overflow: hidden;
 }
+@media (max-width: 45rem) {
+  .software__content--grid {
+    overflow: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .software__content--grid::-webkit-scrollbar {
+    display: none;
+  }
+}
 .software__content--grid .software__grid {
   display: flex;
   cursor: none;
+}
+@media (max-width: 45rem) {
+  .software__content--grid .software__grid {
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+  }
 }
 .software__content--grid .grid__element {
   min-width: 400px;
@@ -340,6 +356,11 @@ header {
 .software__content--grid .grid__element:not(:first-child) {
   -webkit-padding-start: 40px;
           padding-inline-start: 40px;
+}
+@media (max-width: 45rem) {
+  .software__content--grid .grid__element {
+    scroll-snap-align: center;
+  }
 }
 .software__content--grid .grid__element .element__title {
   display: flex;
