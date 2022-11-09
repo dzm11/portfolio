@@ -174,10 +174,27 @@ const confidentSectionObserver = new IntersectionObserver((entries) => {
 },
 {
   // threshold: 1,
-  // rootMargin: "-50px 0px",
+  rootMargin: "0px 0px -20px 0px",
 })
 const condifentSectionAnimation = document.querySelectorAll('.confident__content--element');
 condifentSectionAnimation.forEach((el) => confidentSectionObserver.observe(el));
+
+
+//Experience Animation Observer
+
+const experienceObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting){
+      entry.target.classList.add('experience-reveal')
+      experienceObserver.unobserve(entry.target);
+    }
+  })
+},
+{
+  rootMargin: "0px 0px -50px 0px",
+})
+const experienceAnimation = document.querySelectorAll('.company');
+experienceAnimation.forEach((el) => experienceObserver.observe(el));
 
 
 window.addEventListener("mousemove", cursor);
