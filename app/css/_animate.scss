@@ -237,6 +237,9 @@
       &>*{
         animation: entry .5s cubic-bezier(.16, 0, .06, .79) .5s forwards;
       }
+      &::before{
+        animation: entry .5s cubic-bezier(.16, 0, .06, .79) .5s forwards;
+      }
     }
     .position__information--date{
       &>*{
