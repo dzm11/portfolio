@@ -81,6 +81,15 @@
     animation: imageAnimation 1s cubic-bezier(0.7, 0, 0.3, 1) 1s forwards;
 }
 
+.introduction__textarea--title{
+  opacity: 0;
+  animation: imageAnimation 1s cubic-bezier(0.7, 0, 0.3, 1) 1.4s forwards;
+}
+.introduction__textarea--bodytext{
+  opacity: 0;
+  animation: imageAnimation 1s cubic-bezier(0.7, 0, 0.3, 1) 1.8s forwards;
+}
+
 //Counter Animation
 
 .unrevealed{
@@ -111,6 +120,9 @@
   animation: entry 0.3s cubic-bezier(.16, 0,.06,.79) 1s forwards;
 }
 
+
+//Grid Animations
+
 .grid__element{
   opacity: 0;
 }
@@ -130,4 +142,19 @@ width: 0px;}
   .software__content--bar{
     animation: counterAnimation .7s cubic-bezier(.16, 0,.06,.79) 1s forwards;
   }
+}
+
+// Confident Elements Animations
+
+.confident__content--element{
+  opacity: 0;
+}
+.confident-reveal{
+  animation: entry .3s cubic-bezier(.16, 0,.06,.79) .5s forwards;
+}
+
+// Experience Animations
+
+.experience__content>*{
+opacity: 0;
 }

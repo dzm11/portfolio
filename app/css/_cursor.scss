@@ -1,4 +1,6 @@
 .mouse__cursor {
+    // top: -80px;
+    // left: -80px;
     width: 0;
     height: 0;
     border-radius: 50%;
@@ -25,6 +27,11 @@
 .mouse__cursor--active {
     height: 80px;
     width: 80px;
+    @media (max-width: 45rem) {
+        &{
+            display: none;
+        }
+    }
     p{
         font-size: var(--fs-small-paragraph);
         transition: font-size .4s cubic-bezier(0.34, 1, 0.64, 1);

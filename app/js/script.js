@@ -162,12 +162,26 @@ const carouselObserver = new IntersectionObserver((entries) => {
 const carouselAnimation = document.querySelectorAll('.software__content');
 carouselAnimation.forEach((el) => carouselObserver.observe(el));
 
+//Confident Section Elements Animation Observer
 
+const confidentSectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting){
+      entry.target.classList.add('confident-reveal')
+      confidentSectionObserver.unobserve(entry.target);
+    }
+  })
+},
+{
+  // threshold: 1,
+  // rootMargin: "-50px 0px",
+})
+const condifentSectionAnimation = document.querySelectorAll('.confident__content--element');
+condifentSectionAnimation.forEach((el) => confidentSectionObserver.observe(el));
 
 
 window.addEventListener("mousemove", cursor);
 function cursor(e){
-
   // console.log(values[5]);
   // console.log(tr);
 }
