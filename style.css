@@ -86,6 +86,16 @@ svg {
     scroll-behavior: auto !important;
   }
 }
+::-moz-selection { /* Code for Firefox */
+  color: var(--clr-neutral-100);
+  background: var(--clr-accent);
+}
+
+::selection {
+  color: var(--clr-neutral-100);
+  background: var(--clr-accent);
+}
+
 :root {
   --clr-neutral-900:hsla(225, 7%, 12%, 1);
   --clr-neutral-500:hsla(0, 0%, 55%, 1);
@@ -716,14 +726,14 @@ footer .policy {
 }
 .mouse__cursor p {
   font-size: 0em;
-  transition: font-size 0.4s cubic-bezier(0.36, 0, 0.66, 0);
+  transition: font-size 0.2s cubic-bezier(0.36, 0, 0.66, 0);
   will-change: font-size;
   color: var(--clr-neutral-100);
 }
 
 .mouse__cursor--active {
-  height: 80px;
-  width: 80px;
+  height: 110px;
+  width: 110px;
 }
 @media (max-width: 45rem) {
   .mouse__cursor--active {

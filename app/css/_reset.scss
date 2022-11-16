@@ -85,3 +85,13 @@ svg {
     scroll-behavior: auto !important;
   }
 }
+
+::-moz-selection { /* Code for Firefox */
+  color: var(--clr-neutral-100);
+  background: var(--clr-accent);
+}
+
+::selection {
+  color: var(--clr-neutral-100);
+  background: var(--clr-accent);
+}
