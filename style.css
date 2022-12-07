@@ -688,9 +688,18 @@ footer .policy {
   padding: 8px 0;
 }
 
+.kiddy {
+  height: 100%;
+}
 .kiddy .header__title {
   -webkit-margin-after: 4rem;
           margin-block-end: 4rem;
+}
+@media (max-width: 45rem) {
+  .kiddy .header__title {
+    -webkit-margin-after: 2.5rem;
+            margin-block-end: 2.5rem;
+  }
 }
 .kiddy .header__title--name {
   display: flex;
@@ -709,7 +718,7 @@ footer .policy {
 .kiddy .overview {
   display: flex;
 }
-@media (max-width: 45rem) {
+@media (max-width: 64rem) {
   .kiddy .overview {
     flex-direction: column;
     gap: 2.5rem;
@@ -805,7 +814,7 @@ footer .policy {
 .kiddy .experience {
   display: flex;
 }
-@media (max-width: 45rem) {
+@media (max-width: 64rem) {
   .kiddy .experience {
     flex-direction: column;
     gap: 2.5rem;
