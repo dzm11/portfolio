@@ -561,7 +561,17 @@
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js"></script>
 
-    <script>    var character = 2;
+
+    <script>
+        const locoScroll = new LocomotiveScroll({
+            el: document.querySelector(".data-scroll-container"),
+            smooth: true,
+        }); 
+
+    </script>
+
+    <script>    
+        var character = 2;
         var msg = "Piotr Brzezinski • UX / UI Designer • ";
         var currentTitle = document.title;
         function counter() {
