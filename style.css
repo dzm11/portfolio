@@ -239,6 +239,7 @@ span.red {
 body {
   font-family: var(--ff-primary);
   color: var(--clr-neutral-900);
+  overflow: hidden;
 }
 
 header {
@@ -706,7 +707,7 @@ footer .policy {
   gap: 1rem;
 }
 .kiddy .header__title--name::after {
-  content: url("../../img/projects/kiddy/newtab.svg");
+  content: url("./img/projects/kiddy/newtab.svg");
   aspect-ratio: 1;
   height: 5rem;
 }
