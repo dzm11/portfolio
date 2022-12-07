@@ -10,29 +10,6 @@ lazyImages.forEach(img=>{
     locoScroll.update()
   })
 })
-// // Initializing Imagesloaded for locomotive refresh height
-// let scrollContainer = document.querySelector(".data-scroll-container");
-// imagesLoaded( scrollContainer, function( instance ) {
-//   console.log('all images are loaded');
-// });
-
-
-//   /* update scroll (height) when all images are loaded */
-//   var body = document.body,
-//     html = document.documentElement;
-
-// var height = Math.max( body.scrollHeight, body.offsetHeight, 
-//                        html.clientHeight, html.scrollHeight, html.offsetHeight );
-
-//                        console.log(height)
-//   imagesLoaded(scrollContainer, { background: true }, function () {
-//     locoScroll.update();
-//     var newheight = Math.max( body.scrollHeight, body.offsetHeight, 
-//       html.clientHeight, html.scrollHeight, html.offsetHeight );
-
-//       console.log(newheight)
-//   });
-
 
 // Device Friendly Product Slider With Progress Bar + circle mouse
 // https://www.youtube.com/watch?v=LPBGK1gqXoU

@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piotr Brzezinski • UX / UI Designer</title>
+    <title>Piotr Brzezinski • UX / UI Designer • </title>
     <link rel="stylesheet" href="https://use.typekit.net/qhq1dlb.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> -->
     <link rel="stylesheet" href="../style.css">
 
     <!-- favicons -->
@@ -111,12 +111,12 @@
             <section class="section data-scroll-section">
                 <div class="project">
 
-                    <div class="project__image"><img src="../img/projects/kiddy/2.webp" alt="" height="2320.730px"></div>
+                    <div class="project__image"><img src="../img/projects/kiddy/2.webp" alt="" class="lazy"></div>
                 </div>
             </section>
             <section class="section data-scroll-section">
                 <div class="project">
-                    <div class="project__image"><img src="../img/projects/kiddy/3.webp" alt="" height="1642.640px"></div>
+                    <div class="project__image"><img src="../img/projects/kiddy/3.webp" alt="" class="lazy"></div>
                 </div>
             </section>
             <section class="section features data-scroll-section">
@@ -135,14 +135,14 @@
             </section>
             <section class="section project__grid data-scroll-section">
                 <div class="project">
-                    <div class="project__image"><img src="../img/projects/kiddy/5.webp" alt="" height="643px"></div>
+                    <div class="project__image"><img src="../img/projects/kiddy/5.webp" alt="" ></div>
                     <div class="project__description">
                         <p class="fs-paragraph">Dodaliśmy możliwość zmiany kolorów już na poziomie listingu tak by
                             klient mógł już na tym etapie się z nimi zapoznawać.</p>
                     </div>
                 </div>
                 <div class="project">
-                    <div class="project__image"><img src="../img/projects/kiddy/5.webp" alt="" height="643px"></div>
+                    <div class="project__image"><img src="../img/projects/kiddy/5.webp" alt=""></div>
                     <div class="project__description">
                         <p class="fs-paragraph">Dodaliśmy możliwość zmiany kolorów już na poziomie listingu tak by
                             klient mógł już na tym etapie się z nimi zapoznawać.</p>
@@ -188,12 +188,12 @@
             </section>
             <section class="section data-scroll-section">
                 <div class="project">
-                    <div class="project__image"><img src="../img/projects/kiddy/6a.webp" alt="" height="2320.530px"></div>
+                    <div class="project__image"><img src="../img/projects/kiddy/6a.webp" alt="" class="lazy"></div>
                 </div>
             </section>
             <section class="section data-scroll-section">
                 <div class="project">
-                    <div class="project__image"><img src="../img/projects/kiddy/6.webp" alt="" height="2320.530px"></div>
+                    <div class="project__image"><img src="../img/projects/kiddy/6.webp" alt="" class="lazy"></div>
                 </div>
             </section>
         </main>
@@ -209,7 +209,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="../app/js/locomotive-scroll.min.js"></script>
     <script>
         var character = 2;
         var msg = "Piotr Brzezinski • UX / UI Designer • ";
@@ -230,7 +231,7 @@
             counter();
         };
     </script>
-    <script defer src="./../app/js/script.js"></script>
+    <script defer src="../app/js/script.js"></script>
 </body>
 
 </html>
