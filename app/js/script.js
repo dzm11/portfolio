@@ -1,5 +1,16 @@
 try{
-// Initializing Imagesloaded for locomotive refresh height
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector(".data-scroll-container"),
+    smooth: true,
+});
+
+const lazyImages = document.querySelectorAll('.lazy');
+lazyImages.forEach(img=>{
+  img.addEventListener('load',()=>{
+    locoScroll.update()
+  })
+})
+// // Initializing Imagesloaded for locomotive refresh height
 // let scrollContainer = document.querySelector(".data-scroll-container");
 // imagesLoaded( scrollContainer, function( instance ) {
 //   console.log('all images are loaded');
