@@ -1,5 +1,4 @@
-try{
-  const locoScroll = new LocomotiveScroll({
+const locoScroll = new LocomotiveScroll({
     el: document.querySelector(".data-scroll-container"),
     smooth: true,
 });
@@ -10,72 +9,6 @@ lazyImages.forEach(img=>{
     locoScroll.update()
   })
 })
-
-// Device Friendly Product Slider With Progress Bar + circle mouse
-// https://www.youtube.com/watch?v=LPBGK1gqXoU
-  const slider = document.querySelector('.software__grid'); //cursor too
-  const progressBar = document.querySelector('.progress__bar');
-  let mouseCursor = document.querySelector('.mouse__cursor')
-  
-  let sliderGrabbed = false;
-  
-  slider.parentElement.addEventListener('scroll', (e) => {
-      progressBar.style.width  = `${getScrollPercentage()}%`;
-  
-  })
-  
-  slider.addEventListener('mousedown', (e) => {
-      sliderGrabbed = true;
-  })
-  
-  slider.addEventListener('mouseup', (e) => {
-      sliderGrabbed = false;
-  })
-  
-  slider.addEventListener('mouseleave', (e) => {
-      sliderGrabbed = false;
-      mouseCursor.classList.remove('mouse__cursor--active');
-  })
-  
-  slider.addEventListener('mouseenter', (e) => {
-    mouseCursor.classList.add('mouse__cursor--active');
-  })
-  
-  slider.addEventListener('mousemove', (e) => {
-    let el = document.querySelector('.container');
-    let st = window.getComputedStyle(el);
-    let tr = st.getPropertyValue("-webkit-transform") ||
-              st.getPropertyValue("-moz-transform") ||
-              st.getPropertyValue("-ms-transform") ||
-              st.getPropertyValue("-o-transform") ||
-              st.getPropertyValue("transform") || FAIL;
-      var values = tr.split('(')[1];
-      values = values.split(')')[0];
-      values = values.split(', ');
-      // console.log(values[5]);
-  
-      mouseCursor.style.top = ((+values[5] * (-1)) + +e.clientY) + 'px';
-      mouseCursor.style.left = e.clientX + 'px';
-  
-      if(sliderGrabbed){
-          slider.parentElement.scrollLeft -= e.movementX;
-      }
-  })
-  
-  // slider.addEventListener('wheel', (e) =>{
-  //     e.preventDefault()
-  //     slider.parentElement.scrollLeft += e.deltaY;
-  // })
-  
-  function getScrollPercentage(){
-     return ((slider.parentElement.scrollLeft / (slider.parentElement.scrollWidth - slider.parentElement.clientWidth) ) * 100);
-  }
-  
-}
-catch(err){
-console.log(err);
-}
-
 
 // MAGNETIC BUTTONS
 // https://www.codingsnow.com/2021/03/tutorial51.html
@@ -119,7 +52,6 @@ hiddenElements.forEach((el) => firstEntry.observe(el));
 
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    // console.log(entry) 
     if (entry.isIntersecting){
       entry.target.classList.add('reveal')
       counterObserver.unobserve(entry.target);
@@ -128,7 +60,6 @@ const counterObserver = new IntersectionObserver((entries) => {
 },
 {
   threshold: 1,
-  // rootMargin: "-50px 0px",
 })
 const counterAnimation = document.querySelectorAll('.counter');
 counterAnimation.forEach((el) => counterObserver.observe(el));
@@ -136,18 +67,14 @@ counterAnimation.forEach((el) => counterObserver.observe(el));
 //Counter Animation Observer
 
 const titleObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    // console.log(entry) 
+  entries.forEach((entry) => { 
     if (entry.isIntersecting){
       entry.target.classList.add('rightToLeft')
       titleObserver.unobserve(entry.target);
     }
   })
 },
-{
-  // threshold: 1,
-  // rootMargin: "-50px 0px",
-})
+)
 const titleAnimation = document.querySelectorAll('.title-animation');
 titleAnimation.forEach((el) => titleObserver.observe(el));
 
@@ -160,11 +87,7 @@ const carouselObserver = new IntersectionObserver((entries) => {
       carouselObserver.unobserve(entry.target);
     }
   })
-},
-{
-  // threshold: 1,
-  // rootMargin: "-50px 0px",
-})
+},)
 const carouselAnimation = document.querySelectorAll('.software__content');
 carouselAnimation.forEach((el) => carouselObserver.observe(el));
 
@@ -179,7 +102,6 @@ const confidentSectionObserver = new IntersectionObserver((entries) => {
   })
 },
 {
-  // threshold: 1,
   rootMargin: "0px 0px -20px 0px",
 })
 const condifentSectionAnimation = document.querySelectorAll('.confident__content--element');
@@ -205,6 +127,4 @@ experienceAnimation.forEach((el) => experienceObserver.observe(el));
 
 window.addEventListener("mousemove", cursor);
 function cursor(e){
-  // console.log(values[5]);
-  // console.log(tr);
 }
