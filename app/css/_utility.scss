@@ -106,3 +106,8 @@ padding-inline: 2rem;
     user-select: none;
     /* Standard syntax */
 }
+
+.performance{
+    contain: content;
+    content-visibility: auto;
+}

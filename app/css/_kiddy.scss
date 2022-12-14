@@ -103,7 +103,10 @@
                 }
 
                 .row__description {
+                    display: flex;
                     flex: 1;
+                    flex-direction: column;
+                    gap: 20px;
 
                     ul {
                         list-style-position: inside;
@@ -223,7 +226,15 @@
 
                 .row__description {
                     flex: 1;
-
+                    p:nth-child(1) {
+                        margin-block-end: 20px;
+                }
+                p:nth-child(2) {
+                    margin-block-end: 20px;
+            }
+            p:nth-child(3) {
+                margin-block-end: 20px;
+        }
                     ul {
                         list-style-position: inside;
                     }

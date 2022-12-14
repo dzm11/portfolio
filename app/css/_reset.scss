@@ -73,6 +73,12 @@ svg {
   border-radius: 8px;
 }
 
+picture.full-width{
+  img{
+width: 100%;
+  }
+}
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {

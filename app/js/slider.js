@@ -49,6 +49,5 @@ slider.addEventListener('mousemove', (e) => {
 })
 
 function getScrollPercentage(){
-  console.log(slider);
    return ((slider.parentElement.scrollLeft / (slider.parentElement.scrollWidth - slider.parentElement.clientWidth) ) * 100);
 }

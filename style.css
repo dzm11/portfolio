@@ -69,6 +69,10 @@ svg {
   border-radius: 8px;
 }
 
+picture.full-width img {
+  width: 100%;
+}
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -317,6 +321,11 @@ span.red {
   /* Standard syntax */
 }
 
+.performance {
+  contain: content;
+  content-visibility: auto;
+}
+
 body {
   font-family: var(--ff-primary);
   color: var(--clr-neutral-900);
@@ -372,6 +381,12 @@ header {
   .introduction__textarea--bodytext {
     padding-block-start: 0;
   }
+}
+.introduction__textarea--bodytext p:nth-child(1) {
+  margin-block-end: 20px;
+}
+.introduction__textarea--bodytext p:nth-child(2) {
+  margin-block-end: 20px;
 }
 
 .counter {
@@ -498,10 +513,13 @@ header {
   }
 }
 .confident__content--element {
-  max-width: 36.75rem;
+  max-width: 40rem;
 }
 .confident__content--element .element__description {
   margin-block-start: 1rem;
+}
+.confident__content--element .element__description p:nth-child(1) {
+  margin-block-end: 20px;
 }
 
 .company {
@@ -529,6 +547,9 @@ header {
 }
 .company__position .position__description {
   max-width: 700px;
+}
+.company__position .position__description p:nth-child(1) {
+  margin-block-end: 20px;
 }
 @media (max-width: 45rem) {
   .company__position .position__description {
@@ -806,7 +827,10 @@ footer .policy {
   font-size: var(--fs-small-paragraph);
 }
 .kiddy .overview__details--row .row__description {
+  display: flex;
   flex: 1;
+  flex-direction: column;
+  gap: 20px;
 }
 .kiddy .overview__details--row .row__description ul {
   list-style-position: inside;
@@ -891,6 +915,15 @@ footer .policy {
 }
 .kiddy .experience__details--row .row__description {
   flex: 1;
+}
+.kiddy .experience__details--row .row__description p:nth-child(1) {
+  margin-block-end: 20px;
+}
+.kiddy .experience__details--row .row__description p:nth-child(2) {
+  margin-block-end: 20px;
+}
+.kiddy .experience__details--row .row__description p:nth-child(3) {
+  margin-block-end: 20px;
 }
 .kiddy .experience__details--row .row__description ul {
   list-style-position: inside;
