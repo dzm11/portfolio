@@ -111,3 +111,13 @@ padding-inline: 2rem;
     contain: content;
     content-visibility: auto;
 }
+
+.not-allow{
+    cursor: not-allowed;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}

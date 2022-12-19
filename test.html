@@ -1,0 +1,99 @@
+<table class="main"
+    style="width: 100%; max-width: 600px; background-color: #fff; font-family: sans-serif; color: #494949; box-shadow: 0 0 25px rgba(0, 0, 0, 0.15); text-align: center;"
+    width="100%">
+
+    <tr>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table width="100%">
+
+                <tr>
+                    <td style="font-size: 0;">
+
+                        {% products count=8 segment='sale_price_effective_date' order_by='updated_at' order=-1 as product_list %}
+
+                        {% load tz %}{% timezone "UTC" %}{% now "Y-m-d h:i:s" %}{% now "Y-m-dTH:i:sO" as date_today%}{%endtimezone %}
+
+                        date_today: {{ date_today }}
+
+                        date_from: {{ date_from }}
+
+                        date_until: {{ date_until }}
+
+                        {% for product in product_list %}
+
+                        {% if "psa" in product.name or "pies" in product.name %}
+
+                        {% with date_from=product.sale_price_effective_date|slice:'25' %}
+
+                        {% with date_until=product.sale_price_effective_date|cut:date_from|cut:'/'|slice:'25' %}
+
+                        <table
+                            style="width: 100%; max-width: 210px; display: inline-block; vertical-align: top; text-align: center;">
+                            <tr>
+                                <td style="padding: 20px; text-align: left;">
+
+                                    <table style="font-size: 15px;">
+                                        <tr>
+                                            <td>
+                                                <a href="{{product.product_url}}"><img src="{{product.image_url}}"
+                                                        alt="" title="Product Photo" width="150" height="240"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 5px 0px 10px;">
+                                                <p
+                                                    style="height: 95px; font-size: 15px; font-weight: 600; font-family: Arial Narrow, Arial, sans-serif; height: 70px; margin-left: 5px; margin-right: auto; margin-bottom: 0; margin-top: 0; color: #000000;">
+                                                    {{ product.name|upper|truncatewords:"8"|cut:"..." }}</p>
+                                                    <p
+                                                    style="height: 55px; font-size: 12px; line-height: 15px; font-family: Arial Narrow, Arial, sans-serif; margin-left: 5px; margin-right: 0; margin-bottom: 5px; margin-top: 0; letter-spacing: 0.5px; color: #000000;">
+                                                    {{ product.description|truncatechars:"58"|cut:"..."}}</p>
+                                                <span style="display: inline-block;">
+
+
+                                                    {% if date_today >= date_from and date_until >= date_today %}
+                                                    <del>
+                                                        <p
+                                                            style="font-size: 12px; font-weight: 400; font-family: Arial Narrow, Arial, sans-serif; margin-left: 5px; margin-right: auto; margin-bottom: 0; margin-top:0; color: #000000;">
+                                                            {{product.price}}</p>
+                                                    </del>
+                                                    <p
+                                                        style="font-size: 20px; font-weight: 600; font-family: Arial Narrow, Arial, sans-serif; margin-left: 5px; margin-right: auto; margin-bottom: 10px; margin-top: 0; color: red;">
+                                                        {{product.sale_price}}</p>
+                                                        {% else %}
+                                                        <p
+                                                            style="font-size: 20px; font-weight: 600; font-family: Arial Narrow, Arial, sans-serif; margin-left: 5px; margin-right: auto; margin-bottom: 10px; margin-top: 18px; color: #000000;">
+                                                            {{product.price}}</p>
+                                                    {% endif %}
+                                                </span>
+                                               
+                                                <span style="display: inline-block;">
+                                                    <a href="{{product.product_url}}" target="_blank">
+                                                        <img alt="KUP" border="0" class="mobilebuttonbuy" height="32"
+                                                            src="https://media.user.com/uploads/reqe7e-john-dog/btn-kup_hivL3Pr.png"
+                                                            style="width: 109px; height: 32px; margin-left: 3px;"
+                                                            width="109" />
+                                                    </a>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </td>
+                            </tr>
+
+                        </table>
+                        {% endwith %}
+                        {% endwith %}
+                        {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>

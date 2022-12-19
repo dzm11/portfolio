@@ -29,18 +29,19 @@ slider.addEventListener('mouseenter', (e) => {
 })
 
 slider.addEventListener('mousemove', (e) => {
-  let el = document.querySelector('.container');
-  let st = window.getComputedStyle(el);
-  let tr = st.getPropertyValue("-webkit-transform") ||
-            st.getPropertyValue("-moz-transform") ||
-            st.getPropertyValue("-ms-transform") ||
-            st.getPropertyValue("-o-transform") ||
-            st.getPropertyValue("transform") || FAIL;
-    var values = tr.split('(')[1];
-    values = values.split(')')[0];
-    values = values.split(', ');
+//   let el = document.querySelector('.container');
+//   let st = window.getComputedStyle(el);
+//   let tr = st.getPropertyValue("-webkit-transform") ||
+//             st.getPropertyValue("-moz-transform") ||
+//             st.getPropertyValue("-ms-transform") ||
+//             st.getPropertyValue("-o-transform") ||
+//             st.getPropertyValue("transform") || FAIL;
+//     var values = tr.split('(')[1];
+//     values = values.split(')')[0];
+//     values = values.split(', ');
 
-    mouseCursor.style.top = ((+values[5] * (-1)) + +e.clientY) + 'px';
+    // mouseCursor.style.top = ((+values[5] * (-1)) + +e.clientY) + 'px';
+    mouseCursor.style.top = e.clientY + 'px';
     mouseCursor.style.left = e.clientX + 'px';
 
     if(sliderGrabbed){

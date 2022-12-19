@@ -132,6 +132,7 @@ header {
         display: flex;
         padding-block: 5rem;
         cursor: none;
+        scroll-snap-type: x mandatory;
 
         @media (max-width: 45rem) {
             & {
@@ -142,6 +143,7 @@ header {
     }
 
     .grid__element {
+        scroll-snap-align: start;
 
         min-width: 400px;
         width: 100%;
