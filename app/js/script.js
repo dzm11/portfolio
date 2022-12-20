@@ -52,6 +52,12 @@ barba.init({
       once(){}
     }
   ],
+  views: [{
+    namespace: 'home',
+    beforeEnter(data) {
+      preloader.classList.add('hide');
+    }
+  }]
 });
 
 const preloader = document.querySelector(".preloader");
