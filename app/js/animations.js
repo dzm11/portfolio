@@ -63,3 +63,7 @@ barba.init({
     }
   ]
 });
+
+barba.hooks.enter(() => {
+  document.body.scrollTop = 0;
+});

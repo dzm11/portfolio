@@ -127,6 +127,3 @@ const experienceObserver = new IntersectionObserver(
 );
 const experienceAnimation = document.querySelectorAll(".company");
 experienceAnimation.forEach((el) => experienceObserver.observe(el));
-
-window.addEventListener("mousemove", cursor);
-function cursor(e) {}

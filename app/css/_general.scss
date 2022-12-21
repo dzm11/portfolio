@@ -84,8 +84,7 @@ header {
 }
 
 .selections,
-.experience,
-.footer {
+.experience {
     margin-block-end: 200px;
 
     @media (max-width: 45rem) {
@@ -94,6 +93,11 @@ header {
         }
     }
 }
+
+.footer {
+    margin-block-end: 5rem;
+}
+
 
 .software {
     margin-block-end: 120px;
@@ -438,7 +442,7 @@ footer {
 
             }
 
-            div {
+            .post__row {
                 gap: 24px;
                 padding: 80px 0;
                 border-bottom: 1px solid var(--clr-neutral-100);
@@ -485,19 +489,28 @@ footer {
                     outline: none;
                 }
             }
-
-            button {
-                // position: absolute;
-                bottom: -20px;
-                right: -30px;
-                margin-block-start: 24px;
-                height: 160px;
-                width: 160px;
-                border-radius: 50%;
-                border: none;
-                background-color: var(--clr-neutral-100);
-                color: var(--clr-neutral-900);
+.button__section{
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem 1rem;
+    .magnetic__container{
+        border: none;
+        button {
+            height: 160px;
+            width: 160px;
+            border-radius: 50%;
+            border: none;
+            background-color: var(--clr-neutral-100);
+            color: var(--clr-neutral-900);
+            transition: transform 50ms ease-out;
+            span{
+                transition: transform 50ms ease-out;
             }
+        }
+    }
+
+}
+
         }
     }
 

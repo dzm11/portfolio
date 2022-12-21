@@ -412,16 +412,18 @@ header {
 }
 
 .selections,
-.experience,
-.footer {
+.experience {
   margin-block-end: 200px;
 }
 @media (max-width: 45rem) {
   .selections,
-.experience,
-.footer {
+.experience {
     margin-block-end: 5rem;
   }
+}
+
+.footer {
+  margin-block-end: 5rem;
 }
 
 .software {
@@ -697,55 +699,64 @@ footer .footer__content form {
 footer .footer__content form div:first-child {
   border-top: 1px solid var(--clr-neutral-100);
 }
-footer .footer__content form div {
+footer .footer__content form .post__row {
   gap: 24px;
   padding: 80px 0;
   border-bottom: 1px solid var(--clr-neutral-100);
 }
 @media (max-width: 45rem) {
-  footer .footer__content form div {
+  footer .footer__content form .post__row {
     padding: 64px 0;
     gap: 8px;
   }
 }
-footer .footer__content form div label {
+footer .footer__content form .post__row label {
   font-size: var(--fs-header-5);
 }
 @media (max-width: 45rem) {
-  footer .footer__content form div label {
+  footer .footer__content form .post__row label {
     font-size: var(--fs-paragraph);
   }
 }
-footer .footer__content form div input::placeholder {
+footer .footer__content form .post__row input::placeholder {
   font-size: var(--fs-header-5);
   color: var(--clr-neutral-500);
 }
 @media (max-width: 45rem) {
-  footer .footer__content form div input::placeholder {
+  footer .footer__content form .post__row input::placeholder {
     font-size: var(--fs-paragraph);
   }
 }
-footer .footer__content form div input:focus {
+footer .footer__content form .post__row input:focus {
   outline: none;
 }
-footer .footer__content form div textarea {
+footer .footer__content form .post__row textarea {
   resize: none;
   overflow: auto;
   height: 8em;
 }
-footer .footer__content form div textarea:focus {
+footer .footer__content form .post__row textarea:focus {
   outline: none;
 }
-footer .footer__content form button {
-  bottom: -20px;
-  right: -30px;
-  margin-block-start: 24px;
+footer .footer__content form .button__section {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem 1rem;
+}
+footer .footer__content form .button__section .magnetic__container {
+  border: none;
+}
+footer .footer__content form .button__section .magnetic__container button {
   height: 160px;
   width: 160px;
   border-radius: 50%;
   border: none;
   background-color: var(--clr-neutral-100);
   color: var(--clr-neutral-900);
+  transition: transform 50ms ease-out;
+}
+footer .footer__content form .button__section .magnetic__container button span {
+  transition: transform 50ms ease-out;
 }
 footer .policy {
   text-align: end;
@@ -1250,7 +1261,7 @@ footer .policy {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1) 2s;
+  transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1) 1s;
 }
 .preloader.hide {
   transform: translateY(-100%);
