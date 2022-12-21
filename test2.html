@@ -13,9 +13,9 @@
                 <tr>
                     <td style="font-size: 0;">
 
-                        {% products count=6 segment='all' order_by='updated_at' order=-1 as product_list %}
+                        {% products count=6 segment='wizyta_promocja' order_by='updated_at' order=-1 as product_list %}
                         {% for product in product_list %}
-                        {% if product.image_url %}
+                        {% if product.image_url and product.sale_price and product.special_offer == 'yes' %}
                         <table
                             style="width: 100%; max-width: 210px; display: inline-block; vertical-align: top; text-align: center;">
                             <tr>
@@ -34,7 +34,7 @@
                                                     style="font-size: 15px; font-weight: 600; font-family: Arial Narrow, Arial, sans-serif; height: 70px; margin-left: 5px; margin-right: auto; margin-bottom: 0; margin-top: 0; color: #000000;">
                                                     {{ product.name|upper|truncatewords:"8"|cut:"..." }}</p>
 
-                                                    <p
+                                                <p
                                                     style="height: 55px; font-size: 12px; line-height: 15px; font-family: Arial Narrow, Arial, sans-serif; margin-left: 5px; margin-right: 0; margin-bottom: 5px; margin-top: 0; letter-spacing: 0.5px; color: #000000;">
                                                     {{ product.description|truncatechars:"58"|cut:"..."}}</p>
 
@@ -44,14 +44,12 @@
                                                     <del>
                                                         <p
                                                             style="font-size: 12px; font-weight: 400; font-family: Arial Narrow, Arial, sans-serif; margin-left: 5px; margin-right: auto; margin-bottom: 0; margin-top: 10px; color: #000000;">
-                                                            {{product.price}}</p>
+                                                            {{product.price|floatformat:2}}</p>
                                                     </del>
                                                     <p
                                                         style="font-size: 20px; font-weight: 600; font-family: Arial Narrow, Arial, sans-serif; margin-left: 5px; margin-right: auto; margin-bottom: 10px; margin-top: 0; color: red;">
                                                         {{product.sale_price}}</p>
-                                                    {% else %}<p
-                                                        style="font-size: 12px; font-weight: 400; font-family: Arial Narrow, Arial, sans-serif; margin-left: 5px; margin-right: auto; margin-bottom: 0; margin-top: 10px; color: #ffffff;">
-                                                        </p>
+                                                    {% else %}
 
                                                     <p
                                                         style="font-size: 20px; font-weight: 600; font-family: Arial Narrow, Arial, sans-serif; margin-left: 5px; margin-right: auto; margin-bottom: 10px; margin-top: 0; color: #000000;">
@@ -59,7 +57,7 @@
                                                     {% endif %}
                                                 </span>
 
-                                                
+
                                                 <span style="display: inline-block;">
                                                     <a href="{{product.product_url}}" target="_blank">
                                                         <img alt="KUP" border="0" class="mobilebuttonbuy" height="32"

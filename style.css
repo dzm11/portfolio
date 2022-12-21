@@ -1250,7 +1250,7 @@ footer .policy {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+  transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1) 0.5s;
 }
 .preloader.hide {
   transform: translateY(-100%);

@@ -1,3 +1,9 @@
+function scrollToTop() {
+	window.scrollTo(0, 0);
+}
+
+const preloader = document.querySelector(".preloader");
+
 // entryAnimation
 const text = document.querySelector(".preloader__text--content");
 const strText = text.textContent;
@@ -14,14 +20,11 @@ let timer = setInterval(onTick, 50);
 function onTick(){
   const span = text.querySelectorAll('span')[char]
   span.classList.add('fade');
-  console.log(char)
+  // console.log(char)
   char++;
   if(char===splitText.length){
     complete();
-    setTimeout(() => {
-      preloader.classList.add('hide');
-    }, 1500);
-
+    preloader.classList.add('hide');
     return;
   }
 }
@@ -33,11 +36,10 @@ function complete(){
 
 barba.use(barbaCss);
 
-// barba.hooks.enter(() => {
-//   window.scrollTo(0, 0);
-// });
+
 
 barba.init({
+  debug: true,
   transitions: [
 {
       name: 'cover',
@@ -59,8 +61,9 @@ barba.init({
     }
   }]
 });
+barba.hooks.beforeEnter(data => { window.scrollTo(0, 0) })
 
-const preloader = document.querySelector(".preloader");
+
 
 
 
