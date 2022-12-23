@@ -64,6 +64,7 @@ barba.init({
   ]
 });
 
+// Scrolling to the top of page
 barba.hooks.enter(() => {
   document.body.scrollTop = 0;
 });
