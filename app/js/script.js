@@ -32,9 +32,10 @@ magnetic.forEach((btn) => {
   });
 });
 
-//First Entry Animation Observer
+function intersectionObservers() {
+  //First Entry Animation Observer
 
-firstEntry = new IntersectionObserver((entries) => {
+const firstEntry = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
@@ -105,10 +106,8 @@ const confidentSectionObserver = new IntersectionObserver(
     rootMargin: "0px 0px -20px 0px",
   }
 );
-const condifentSectionAnimation = document.querySelectorAll(
-  ".confident__content--element"
-);
-condifentSectionAnimation.forEach((el) => confidentSectionObserver.observe(el));
+const confidentSectionAnimation = document.querySelectorAll(".confident__content--element");
+confidentSectionAnimation.forEach((el) => confidentSectionObserver.observe(el));
 
 //Experience Animation Observer
 
@@ -127,3 +126,6 @@ const experienceObserver = new IntersectionObserver(
 );
 const experienceAnimation = document.querySelectorAll(".company");
 experienceAnimation.forEach((el) => experienceObserver.observe(el));
+
+}
+intersectionObservers();

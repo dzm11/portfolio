@@ -23,14 +23,15 @@
 </head>
 
 <body>
+    <div class="preloader">
+
+        <h1 class="fs-header-1 fw-demi preloader__text--content">H E N L O</h1>
+
+    </div>
     <div class="wrapper" data-barba="wrapper">
         <div class="container locomotive-scroll data-scroll-container" data-barba="container"
             data-barba-namespace="home">
-            <div class="preloader">
 
-                <h1 class="fs-header-1 fw-demi preloader__text--content">H E N L O</h1>
-
-            </div>
             <div class="transition"></div>
             <div class="mouse__cursor">
                 <p>drag</p>
@@ -639,9 +640,47 @@
             counter();
         };
     </script>
+    <script>
+    // Entry animations script
+        const preloader = document.querySelector(".preloader");
+        const text = document.querySelector(".preloader__text--content");
+        const strText = text.textContent;
+        const splitText = strText.split("");
+        text.textContent = "";
+        
+        // changing every letter to span
+        for (let i = 0; i < splitText.length; i++) {
+        text.innerHTML += "<span>" + splitText[i] + "</span>"
+        }
+        
+        let char = 0;
+        let timer = setInterval(onTick, 70); // latency between letter aniamtion
+        
+        // Letter animations
+        function onTick(){
+          const span = text.querySelectorAll('span')[char]
+          span.classList.add('fade');
+          char++;
+          if(char===splitText.length){
+            complete();
+            preloader.classList.add('hide'); //Adding class for hiding black box
+            return;
+          }
+        }
+        
+        //Stopping the timer
+        function complete(){
+          clearInterval(timer);
+          timer = null;
+        }
+    </script>
     <script defer src="./app/js/animations.js"></script>
     <script defer src="./app/js/script.js"></script>
     <script src="./app/js/slider.js"></script>
+    <script
+  crossorigin="anonymous"
+  src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CIntersectionObserver"
+></script>
 </body>
 
 </html>

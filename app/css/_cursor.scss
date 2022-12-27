@@ -15,7 +15,7 @@
     align-items: center;
     transition: width .2s cubic-bezier(0.36, 0, 0.66, 0), height .2s cubic-bezier(0.36, 0, 0.66, 0);
     will-change: transform, width, height;
-    z-index: 999;
+    z-index: 2;
     p{
         font-size: 0em;
         transition: font-size .2s cubic-bezier(0.36, 0, 0.66, 0);
