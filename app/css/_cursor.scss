@@ -28,9 +28,9 @@
     height: 110px;
     width: 110px;
     @media (max-width: 45rem) {
-        &{
-            display: none;
-        }
+        // &{
+        //     display: none;
+        // }
     }
     p{
         font-size: var(--fs-small-paragraph);

@@ -10,7 +10,8 @@
 //   })
 // })
 
-// MAGNETIC BUTTONS
+function magneticFunction(){
+  // MAGNETIC BUTTONS
 // https://www.codingsnow.com/2021/03/tutorial51.html
 
 const magnetic = document.querySelectorAll(".magnetic");
@@ -31,6 +32,8 @@ magnetic.forEach((btn) => {
     btn.children[0].style.transform = "translate(0px, 0px)";
   });
 });
+}
+
 
 function intersectionObservers() {
   //First Entry Animation Observer
@@ -129,3 +132,4 @@ experienceAnimation.forEach((el) => experienceObserver.observe(el));
 
 }
 intersectionObservers();
+magneticFunction();

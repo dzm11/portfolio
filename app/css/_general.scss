@@ -148,7 +148,6 @@ header {
 
     .grid__element {
         scroll-snap-align: start;
-
         min-width: 400px;
         width: 100%;
 
@@ -157,7 +156,11 @@ header {
         }
 
         @media (max-width: 45rem) {
+            &:not(:first-child) {
+                padding-inline-start: 20px;
+            }
             & {
+                min-width: 300px;
                 scroll-snap-align: center;
             }
         }

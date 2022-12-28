@@ -16,4 +16,5 @@ barba.init({
 barba.hooks.beforeEnter(() => {
   document.body.scrollTop = 0;
   intersectionObservers();
+  magneticFunction();
 });

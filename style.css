@@ -183,6 +183,10 @@ picture.full-width img {
   line-height: 1.8;
 }
 
+.fs-demi {
+  font-weight: var(--fw-demi);
+}
+
 .section {
   --max-width:120rem;
   --padding:2rem;
@@ -390,7 +394,11 @@ header {
   padding-inline-start: 40px;
 }
 @media (max-width: 45rem) {
+  .software__content--grid .grid__element:not(:first-child) {
+    padding-inline-start: 20px;
+  }
   .software__content--grid .grid__element {
+    min-width: 300px;
     scroll-snap-align: center;
   }
 }
@@ -692,13 +700,12 @@ footer .policy {
   display: flex;
   gap: 1rem;
 }
-.kiddy .header__title--name::after {
-  content: url("./img/projects/kiddy/newtab.svg");
+.kiddy .header__title--name a img {
   aspect-ratio: 1;
   height: 5rem;
 }
 @media (max-width: 45rem) {
-  .kiddy .header__title--name::after {
+  .kiddy .header__title--name a img {
     height: 3rem;
   }
 }
@@ -884,6 +891,10 @@ footer .policy {
   transform: rotate(360deg);
 }
 
+.magnetic-button {
+  margin-inline-start: -24px;
+}
+
 .mouse__cursor {
   width: 0;
   height: 0;
@@ -911,11 +922,6 @@ footer .policy {
 .mouse__cursor--active {
   height: 110px;
   width: 110px;
-}
-@media (max-width: 45rem) {
-  .mouse__cursor--active {
-    display: none;
-  }
 }
 .mouse__cursor--active p {
   font-size: var(--fs-small-paragraph);
