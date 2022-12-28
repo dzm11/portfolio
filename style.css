@@ -568,7 +568,7 @@ header {
   }
 }
 .selections__content .second .project__details {
-  max-width: 50ch;
+  max-width: 700px;
   margin-inline-start: auto;
 }
 .selections__content .project__grid {
